@@ -488,6 +488,47 @@ The structure can change depending on what the domain needs to preserve, inspect
 
 This is why I do not think COSAN should be tied to one grammar.
 
+### 8. Incremental rendering of very long outputs
+
+**Possible use:**  
+Long-form fiction, game scenarios, scripts, reports, or any output that is too large to generate reliably in one pass.
+
+Current commercial AI systems tend to compress or summarize when asked to render very large amounts of content at once. Even when explicitly asked to include everything, details can still be omitted as the requested output becomes longer.
+
+Without structured state, splitting the work into many short renderings creates another problem: continuity between sections can break.
+
+**How COSAN might apply:**
+
+Keep the full content and continuity in structured form, and render only manageable sections at a time.
+
+```text
+structured source
+→ render section 1
+→ render section 2
+→ render section 3
+→ ...
+```
+
+The important point is that continuity lives in the structured source, not only in the previously generated prose.
+
+In fiction experiments, the story was organized around event files. Those files could become large, but because they were code-like structures rather than long prose passages, they could still be referenced, edited, and partially read without needing to rewrite the whole story.
+
+This also creates an important distinction:
+
+> **A prose summary becomes shorter by removing information.  
+> COSAN aims to become smaller by restructuring information.**
+
+A summary compresses by omission.
+
+A COSAN-like representation tries to compress by replacing repeated prose with explicit state, references, conditions, relationships, and reusable structure.
+
+This does not guarantee lossless conversion.
+
+Meaning can still change when natural language is converted into COSAN, and again when COSAN is rendered back into prose or another output.
+
+In my experiments, rendering shorter sections reduced drift, while the structured source helped preserve continuity across those sections.
+
+
 ---
 
 ## Why I am publishing it
@@ -589,6 +630,13 @@ Pronunciation: **co-san / 코산**
 > It is giving AI a medium in which thought can be remembered, modified, inspected, and reused.**
 
 ---
+
+## AI-assisted creation
+
+All files in this repository were created with the assistance of AI.
+
+The ideas, direction, and decisions were provided by the author, while AI was used to generate, structure, edit, and translate the files.
+
 
 # 한국어
 
@@ -1089,6 +1137,53 @@ COSAN 정의
 
 그래서 COSAN을 하나의 문법에 묶으면 안 된다고 생각하게 되었습니다.
 
+### 8. 매우 긴 결과물을 구간별로 렌더링하기
+
+**예상 사용처:**  
+장편 소설, 게임 시나리오, 영화·드라마·방송 대본, 긴 보고서처럼 한 번에 안정적으로 생성하기 어려운 결과물.
+
+현재의 상용 AI는 매우 긴 범위를 한 번에 렌더링하도록 요청할수록 내용을 압축하거나 요약하는 경향이 있습니다.
+
+"모든 내용을 빠짐없이 넣어달라"고 요청해도 출력 범위가 커질수록 세부 내용이 줄어드는 문제가 생깁니다.
+
+그렇다고 구조화 없이 짧은 구간으로 계속 나누어 생성하면 또 다른 문제가 생깁니다.
+
+각 구간은 잘 나와도 구간과 구간 사이의 연결이 끊길 수 있습니다.
+
+**어떻게 적용할 수 있을까:**
+
+전체 내용과 연결 관계는 구조화된 원본에 유지하고, 출력만 AI가 감당할 수 있는 길이로 나누어 렌더링합니다.
+
+```text
+구조화된 원본
+→ 구간 1 렌더링
+→ 구간 2 렌더링
+→ 구간 3 렌더링
+→ ...
+```
+
+중요한 것은 연결성이 이전에 생성한 산문에만 남는 것이 아니라, 구조화된 원본에 남아 있다는 점입니다.
+
+소설 실험에서는 이야기를 사건 파일 단위로 관리했습니다.
+
+사건 파일 자체가 길어져도 긴 산문처럼 처음부터 끝까지 다시 읽어야 하는 글이 아니라 코드 형태의 구조이기 때문에, 필요한 부분을 참조하고 수정하고 일부만 읽는 방식으로 다룰 수 있었습니다.
+
+여기에는 중요한 차이가 하나 있습니다.
+
+> **산문의 요약은 정보를 버려서 짧아지고,  
+> COSAN은 정보를 구조화해서 압축하려고 합니다.**
+
+요약은 내용을 생략하면서 압축합니다.
+
+COSAN과 같은 구조는 반복되는 산문을 상태, 참조, 조건, 관계, 구조로 바꾸어 같은 의미를 더 직접적으로 유지하려고 합니다.
+
+물론 이것이 무손실 변환을 보장한다는 뜻은 아닙니다.
+
+자연어가 COSAN으로 구조화되는 과정에서도 의미가 달라질 수 있고, COSAN을 다시 산문이나 다른 형식으로 렌더링하는 과정에서도 변형이 생길 수 있습니다.
+
+실제 실험에서는 긴 범위를 한 번에 렌더링하기보다 짧은 구간으로 나누어 렌더링하면서 변형을 줄였고, 구간 사이의 연결은 구조화된 원본이 유지하도록 했습니다.
+
+
 ---
 
 ## 왜 공개하는가
@@ -1184,3 +1279,12 @@ COSAN은 완성된 프레임워크나 연구 논문이 아닙니다.
 
 > **COSAN의 핵심은 AI에게 새로운 문법을 주는 것이 아니라,  
 > 생각을 기억하고 수정하고 검사하고 다시 사용할 수 있는 새로운 매체를 주는 것입니다.**
+
+---
+
+## AI 사용
+
+이 저장소의 모든 파일은 AI를 활용해 작성했습니다.
+
+아이디어와 방향, 판단은 작성자가 제시했고, 파일의 생성·구조화·수정·번역에는 AI를 사용했습니다.
+
