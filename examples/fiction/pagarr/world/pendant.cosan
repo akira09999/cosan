@@ -1,0 +1,8 @@
+﻿pendant {
+    type        artifact
+    function    direction_indicator
+    target      pagar
+    holder      dying_man
+    trigger     ??
+    status      active
+}

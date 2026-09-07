@@ -1,0 +1,8 @@
+﻿pagar {
+    type        giant_robot
+    location    ??
+    status      ??
+    owner       ??
+    capability  ??
+    access      pendant_guided
+}

@@ -1,0 +1,28 @@
+﻿fired   init
+from    null
+
+gillian.status          = alive
+gillian.mask            = off
+gillian.belief.B1.val   = true
+gillian.knows           = []
+gillian.suspicion       = []
+
+dying_man.name          = ??
+dying_man.status        = alive
+dying_man.location      = outside
+
+pendant.holder          = dying_man
+pendant.status          = active
+
+world.clock             = 0
+world.distance          = ??
+world.F1.val            = true
+world.F2.val            = true
+world.F3.val            = true
+world.F4.val            = true
+world.F5.val            = true
+
+undi.status             = ??
+undi.location           = ??
+
+war.status              = started

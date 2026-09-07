@@ -1,0 +1,19 @@
+﻿class character undi {
+    age     24
+    gender  female
+    status  ??
+
+    background {
+        origin  ??
+        since   ??
+    }
+
+    bond    dying_man : father
+
+    mask    ??
+
+    knows   []
+    ?!      [father_wounded, father_dead, pendant_transferred_to_gillian, gillian_existence, pagar_location]
+
+    suspicion []
+}

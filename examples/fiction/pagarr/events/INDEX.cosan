@@ -1,0 +1,9 @@
+﻿INDEX {
+    ACT A1 { text = "침입" }
+        1   E_man_enters
+        2   E_pendant_given
+        3   E_man_dies
+        4   E_chasers_appear
+        5   E_pendant_glows
+    ??
+}

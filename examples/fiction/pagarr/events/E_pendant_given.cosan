@@ -1,0 +1,12 @@
+﻿event E_pendant_given {
+    origin  character
+    what    "남자가 눈물을 흘리며 펜던트를 건네고 딸 운디를 지켜달라 한다"
+    when    dying_man.location == gillian_house & dying_man.status == critical_wounded
+    hooks   E_man_enters.dying_man.location
+
+    Δ       pendant.holder      = gillian
+            dying_man.last_wish = protect_undi
+            reveals [F5]
+
+    leaves  [pendant.holder, dying_man.last_wish, ?? undi_location, ?? dying_man_identity]
+}

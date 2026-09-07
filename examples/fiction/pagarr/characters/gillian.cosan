@@ -1,0 +1,51 @@
+﻿class character gillian {
+    age     21
+    gender  male
+
+    background {
+        origin  orphan -> remote_house_resident
+        since   childhood
+    }
+
+    principle P1 {
+        text  = "혼자 살아남는다. 남의 분쟁에 끼어들지 않는다."
+        scope = [self_preservation, remote_life]
+        break = involve_in_strangers_danger | accept_others_burden
+        cost  = safety & anonymity
+    }
+
+    belief B1 {
+        text = "홀로 조용히 사는 것이 최선이다"
+        val  = true
+    }
+
+    wound W1 {
+        text = "부모를 잃었다"
+    }
+
+    resource {
+        health  = stable
+        shelter = remote_house
+    }
+
+    ability basic_survival {
+        text = "홀로 생존할 수 있다"
+    }
+
+    mask    off
+
+    knows   []
+    ?!      [F2, F3, F4, F5, F6, F7, dying_man_identity, undi_location, pursuers_identity]
+
+    suspicion []
+
+    fn on_dying_mans_request(pendant_in_hand, chasers_outside) {
+        when    pendant.holder == gillian & dying_man.last_wish == protect_undi
+        clash   P1(involve_in_strangers_danger) >< dying_man.last_wish & threat_outside
+        proc    assess_pendant -> assess_chasers -> weigh_cost -> decide
+        branch  chasers_outside == true  =>  ??  ! ??
+                chasers_outside == false =>  ??  ! ??
+                _                        =>  STOP:undefined_input
+        Δ       ??
+    }
+}

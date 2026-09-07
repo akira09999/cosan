@@ -1,0 +1,31 @@
+﻿class character dying_man {
+    name    ??
+    age     middle_aged
+    gender  male
+    status  critical_wounded
+
+    background {
+        origin  ??
+        since   ??
+        cover   ??
+    }
+
+    principle P_last {
+        text  = "딸 운디를 지킨다"
+        scope = [undi_safety]
+        break = abandon_undi
+        cost  = life
+    }
+
+    bond    undi : daughter
+
+    resource {
+        health  = critical_wounded
+    }
+
+    knows   [F2, F3, F4]
+    ?!      []
+
+    suspicion []
+    mask      ??
+}

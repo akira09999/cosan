@@ -1,0 +1,54 @@
+﻿class world {
+    clock       0
+    distance    ??
+
+    fact F1 {
+        text     = "전쟁이 시작됐다"
+        val      = true
+        known_by = [reader @ init]
+    }
+
+    fact F2 {
+        text     = "거대 로봇 파가르가 존재한다"
+        val      = true
+        known_by = [dying_man @ init, reader @ E_pendant_glows]
+    }
+
+    fact F3 {
+        text     = "펜던트는 파가르의 방향을 가리킨다"
+        val      = true
+        known_by = [dying_man @ init, reader @ E_pendant_glows]
+    }
+
+    fact F4 {
+        text     = "추격자들이 dying_man을 쫓고 있다"
+        val      = true
+        known_by = [dying_man @ init, gillian @ E_chasers_appear, reader @ E_chasers_appear]
+    }
+
+    fact F5 {
+        text     = "dying_man의 딸은 운디다"
+        val      = true
+        known_by = [dying_man @ init, gillian @ E_pendant_given, reader @ E_pendant_given]
+    }
+
+    fact F6 {
+        text     = "추격자들이 집 밖에 있다"
+        val      = true
+        known_by = [gillian @ E_chasers_appear, reader @ E_chasers_appear]
+    }
+
+    fact F7 {
+        text     = "펜던트가 가리키는 방향에 파가르가 있다"
+        val      = true
+        known_by = [gillian @ E_pendant_glows, reader @ E_pendant_glows]
+    }
+
+    factindex {
+        war:        F1
+        pagar:      F2 F7
+        pendant:    F3 F7
+        threat:     F4 F6
+        undi:       F5
+    }
+}

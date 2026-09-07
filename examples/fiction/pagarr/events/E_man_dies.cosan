@@ -1,0 +1,11 @@
+﻿event E_man_dies {
+    origin  world
+    what    "남자가 쓰러져 숨을 거둔다"
+    when    dying_man.status == critical_wounded & pendant.holder == gillian
+    hooks   E_pendant_given.dying_man.last_wish
+
+    Δ       dying_man.status = dead
+            clock ++
+
+    leaves  [dying_man.status, ?? dying_man_identity, ?? who_sent_pursuers, ?? why_was_he_hunted]
+}

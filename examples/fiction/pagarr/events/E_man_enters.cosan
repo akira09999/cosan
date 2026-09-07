@@ -1,0 +1,11 @@
+﻿event E_man_enters {
+    origin  world
+    what    "중상을 입은 중년 남자가 집 안으로 쓰러져 들어온다"
+    when    clock == 0
+
+    Δ       dying_man.location = gillian_house
+            dying_man.status   = critical_wounded
+            clock ++
+
+    leaves  [dying_man.location, dying_man.status, ?? dying_man_identity, ?? who_wounded_him, ?? why_chose_this_house]
+}

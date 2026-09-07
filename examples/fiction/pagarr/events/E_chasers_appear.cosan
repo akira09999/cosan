@@ -1,0 +1,11 @@
+﻿event E_chasers_appear {
+    origin  world
+    what    "밖에서 남자를 쫓아온 자들이 여럿 나타난다"
+    when    dying_man.status == dead
+    hooks   E_man_enters.?? why_chose_this_house
+
+    Δ       reveals [F4, F6]
+            clock ++
+
+    leaves  [F6, ?? pursuers_identity, ?? pursuers_goal, ?? how_many_chasers]
+}

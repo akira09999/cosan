@@ -1,0 +1,12 @@
+﻿event E_pendant_glows {
+    origin  world
+    what    "펜던트가 밝게 빛나며 파가르가 있는 방향을 가리킨다"
+    when    pendant.holder == gillian & world.F6.val == true
+    hooks   E_pendant_given.pendant.holder
+
+    Δ       gillian.knows += [F2, F3, F7]
+            reveals [F2, F3, F7]
+            clock ++
+
+    leaves  [F7, ?? how_to_reach_pagar, ?? what_is_pagar_for, ?? can_gillian_pilot_pagar]
+}
